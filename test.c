@@ -5,8 +5,11 @@ typedef struct{
         char b;
 }MyStruct;
 
-int main(){
+typedef unsigned char uint8;
 
-    
+int main(){
+    uint8 x = 0;
+    printf("%d\n",x);
+
     return 0;
 }
