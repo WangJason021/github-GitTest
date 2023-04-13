@@ -21,8 +21,9 @@ void *plus(void *args)
     {
         s++;
     }
-    printf("%s end!\n",name);
     pthread_mutex_unlock(&lock1);
+    printf("%s end!\n",name);
+    
     return NULL;
 }
 
