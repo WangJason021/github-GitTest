@@ -68,11 +68,19 @@ int main(){
     uint8 ring_size = 8;
     vRingBufferInit(&ring1,ring_size);
     char np_char[9] = {'1','2','3','4','5','6','7','8','9'};
-    for(int i = 0; i < 9; i++){
+    for(int i = 0; i < 8; i++){
         vWriteData(&ring1,np_char[i]);
         printf("read:%d\twrite:%d\n",ring1.index_read,ring1.index_write);
     }
-    for(int i = 0; i < 9; i++){
+    for(int i = 0; i < 6; i++){
+        vWriteData(&ring1,np_char[i]);
+        printf("read:%d\twrite:%d\n",ring1.index_read,ring1.index_write);
+    }
+    for(int i = 0; i < 3; i++){
+        vReadData(&ring1);
+        printf("read:%d\twrite:%d\n",ring1.index_read,ring1.index_write);
+    }
+    for(int i = 0; i < 4; i++){
         vReadData(&ring1);
         printf("read:%d\twrite:%d\n",ring1.index_read,ring1.index_write);
     }
@@ -82,7 +90,6 @@ int main(){
     // for(int i = 0; i < 3; i++){
     //     vReadData(&ring1);
     // }
-    printf("read:%d\twrite:%d",ring1.index_read,ring1.index_write);
 
     
     return 0;
